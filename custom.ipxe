@@ -23,7 +23,7 @@ set osversion 7 ||
 set centos_mirror http://mirror.rackspace.com/centos ||
 set dir ${osversion}/BaseOS/${os_arch}/os ||
 set repo ${centos_mirror}/${dir} ||
-kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam}
+kernel https://mirror.rackspace.com/CentOS/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam}
 initrd https://mirror.rackspace.com/CentOS/7/os/x86_64/images/pxeboot/initrd.img
 boot || goto custom_exit
 
