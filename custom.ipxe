@@ -4,8 +4,7 @@ isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:
 set ipparam BOOTIF=${netX/mac} ${ipparam}
 set os_arch x86_64
 set osversion 7
-set centos_mirror http://180.150.156.88/centos
-set repo http://180.150.156.88/centos/7/os/x86_64
+set centos_mirror http://180.150.156.88
 
 :custom
 clear custom_choice
@@ -21,10 +20,9 @@ goto custom_exit
 imgfree
 set os_arch x86_64 ||
 set osversion 7 ||
-set centos_mirror http://180.150.156.88/centos ||
-set repo http://180.150.156.88/centos/7/os/x86_64 ||
-kernel http://180.150.156.88/CentOS/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam} {{ kernel_params }}
-initrd http://180.150.156.88/CentOS/7/os/x86_64/images/pxeboot/initrd.img
+set centos_mirror http://180.150.156.88 ||
+kernel http://180.150.156.88/centos/7/os/x86_64/images/pxeboot/vmlinuz initrd=initrd.img repo=http://180.150.156.88/centos/7/os/x86_64  inst.repo=http://180.150.156.88/centos/7/os/x86_64 graphical inst.zram=0 amd_iommu=pt mce=off ${ipparam} {{ kernel_params }}
+initrd http://180.150.156.88/centos/7/os/x86_64/images/pxeboot/initrd.img
 imgargs vmlinuz vmlinuz inst.zram=0 amd_iommu=pt mce=off
 boot || goto custom_exit
 
