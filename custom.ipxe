@@ -5,8 +5,7 @@ set ipparam BOOTIF=${netX/mac} ${ipparam}
 set os_arch x86_64
 set osversion 7
 set centos_mirror http://180.150.156.88/centos
-set dir ${osversion}/BaseOS/${os_arch}/os
-set repo ${centos_mirror}/${dir}
+set repo http://180.150.156.88/centos/7/os/x86_64
 
 :custom
 clear custom_choice
@@ -23,8 +22,7 @@ imgfree
 set os_arch x86_64 ||
 set osversion 7 ||
 set centos_mirror http://180.150.156.88/centos ||
-set dir ${osversion}/BaseOS/${os_arch}/os ||
-set repo ${centos_mirror}/${dir} ||
+set repo http://180.150.156.88/centos/7/os/x86_64 ||
 kernel http://180.150.156.88/CentOS/7/os/x86_64/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam} {{ kernel_params }}
 initrd http://180.150.156.88/CentOS/7/os/x86_64/images/pxeboot/initrd.img
 imgargs vmlinuz vmlinuz inst.zram=0 amd_iommu=pt mce=off
