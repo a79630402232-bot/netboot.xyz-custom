@@ -1,12 +1,24 @@
 #!ipxe
 ###
-### netboot.xyz-custom menu
+### netboot.xyz-custom menu example
 ###
 
-:start
-echo Hello world!
-sleep 10
+:custom
+clear custom_choice
+menu This is a Test Menu
+item --gap This is the first sub menu
+item option_one ${space} Loading a kernel and initrd
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
 
+:option_one
+kernel https://mirror.rackspace.com/CentOS/7/os/x86_64/images/pxeboot/vmlinuz
+initrd https://mirror.rackspace.com/CentOS/7/os/x86_64/images/pxeboot/initrd.img
+imgargs vmlinuz inst.zram=0 amd_iommu=pt mce=off
+boot || goto custom_exit
+
 :custom_exit
-exit 0
+chain utils.ipxe
+exit
