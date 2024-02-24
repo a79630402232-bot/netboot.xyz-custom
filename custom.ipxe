@@ -23,7 +23,6 @@ iseq ${osversion} 7 && set dir ${osversion}/BaseOS/${os_arch}/os ||
 iseq ${osversion} 7 && set repo ${centos_mirror}/${dir} ||
 kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam} {{ kernel_params }}
 initrd https://mirror.rackspace.com/CentOS/7/os/x86_64/images/pxeboot/initrd.img
-imgargs vmlinuz inst.zram=0 amd_iommu=pt mce=off
 boot || goto custom_exit
 
 :custom_exit
