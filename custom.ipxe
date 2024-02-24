@@ -1,10 +1,10 @@
 #!ipxe
-###
-### netboot.xyz-custom menu example
-###
 
 isset ${dhcp-server} && set ipparam ip=dhcp || set ipparam ip=${ip}::${gateway}:${netmask}:::none nameserver=${dns}
 set ipparam BOOTIF=${netX/mac} ${ipparam}
+set os_arch x86_64
+set osversion 7
+
 
 :custom
 clear custom_choice
@@ -18,10 +18,12 @@ goto custom_exit
 
 :option_one
 imgfree
-iseq ${osversion} 7 && set centos_mirror http://mirror.rackspace.com/centos ||
-iseq ${osversion} 7 && set dir ${osversion}/BaseOS/${os_arch}/os ||
-iseq ${osversion} 7 && set repo ${centos_mirror}/${dir} ||
-kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam} {{ kernel_params }}
+set os_arch x86_64 ||
+set osversion 7 ||
+set centos_mirror http://mirror.rackspace.com/centos ||
+set dir ${osversion}/BaseOS/${os_arch}/os ||
+set repo ${centos_mirror}/${dir} ||
+kernel ${centos_mirror}/${dir}/images/pxeboot/vmlinuz inst.repo=${repo} graphical vmlinuz inst.zram=0 amd_iommu=pt mce=off ${ipparam}
 initrd https://mirror.rackspace.com/CentOS/7/os/x86_64/images/pxeboot/initrd.img
 boot || goto custom_exit
 
