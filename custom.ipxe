@@ -31,7 +31,7 @@ boot || goto custom_exit
 :option_three
 echo grml-small
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://aitvin.ru/grml-small/grml-small.iso
+initrd http://aitvin.ru/winpe/winpe2.iso
 boot || goto custom_exit
 
 :option_four
