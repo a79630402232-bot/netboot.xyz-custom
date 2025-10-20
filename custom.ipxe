@@ -83,13 +83,13 @@ initrd https://distro.ibiblio.org/tinycorelinux/15.x/x86/archive/15.0/TinyCore-1
 boot || goto custom_exit
 
 :option_ten
-linux https://aitvin.ru/vmlinuz
+kernel https://aitvin.ru/vmlinuz
 initrd https://aitvin.ru/initrd
 append boot=live components locales=en_US.UTF-8 fetch=https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
 
 
 :option_eleven
-linux https://aitvin.ru/vmlinuz
+kernel https://aitvin.ru/vmlinuz
 initrd https://aitvin.ru/initrd
 append boot=live components locales=en_US.UTF-8 fetch=https://distro.ibiblio.org/puppylinux/puppy-0-1/puppy-1.0.0-firefox.iso
 
