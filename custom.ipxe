@@ -20,13 +20,12 @@ goto custom_exit
 :option_one
 kernel https://aitvin.ru/vmlinuz
 initrd https://aitvin.ru/initrd
-imgargs vmlinuz put_kernel_img_args_here
 boot || goto custom_exit
 
 :option_two
 echo winpe
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd https://aitvin.ru/winpe/winpe2.iso
+initrd https://distro.ibiblio.org/puppylinux/puppy-0-1/puppy-1.0.0-firefox.iso
 boot || goto custom_exit
 
 :option_three
