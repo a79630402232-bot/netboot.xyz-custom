@@ -15,7 +15,7 @@ item option_four ${space} Puppy1 Firefox local
 item option_five ${space} New menu
 item option_six ${space} Netlnx
 item option_seven ${space} KOS
-item option_seven ${space} tiny core
+item option_eight ${space} tiny core
 
 choose custom_choice || goto custom_exit
 echo ${cls}
