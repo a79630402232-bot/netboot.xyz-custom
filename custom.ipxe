@@ -8,10 +8,11 @@ clear custom_choice
 menu This is a Test Menu
 item --gap This is the first sub menu
 item option_one ${space} Loading a kernel and initrd
-item option_two ${space} Loading an ISO
+item option_two ${space} Puppy firefox from source
 item --gap This is a second sub menu
-item option_three ${space} Loads another custom sub menu
-item option_four ${space} This is option four
+item option_three ${space} Mini 23mb
+item option_four ${space} Puppy1 Firefox local
+item option_five ${space} New menu
 choose custom_choice || goto custom_exit
 echo ${cls}
 goto ${custom_choice}
@@ -31,10 +32,16 @@ boot || goto custom_exit
 :option_three
 echo grml-small
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://aitvin.ru/winpe/winpe2.iso
+initrd http://aitvin.ru/winpe/grml-small.iso
 boot || goto custom_exit
 
 :option_four
+echo grml-small
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd http://aitvin.ru/winpe/puppy1.iso
+boot || goto custom_exit
+
+:option_five
 echo Chains into another menu...
 chain https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/custom1.ipxe || goto custom
 
