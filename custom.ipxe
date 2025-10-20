@@ -27,6 +27,7 @@ goto custom_exit
 :option_one
 kernel https://aitvin.ru/vmlinuz
 initrd https://aitvin.ru/initrd
+initrd https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
 boot || goto custom_exit
 
 :option_two
