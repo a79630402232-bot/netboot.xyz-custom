@@ -30,9 +30,9 @@ initrd https://distro.ibiblio.org/puppylinux/puppy-0-1/puppy-1.0.0-firefox.iso
 boot || goto custom_exit
 
 :option_three
-echo grml-small
+echo mini
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://aitvin.ru/winpe/grml-small.iso
+initrd http://aitvin.ru/zerovpn.ru/iso/mini.iso
 boot || goto custom_exit
 
 :option_four
