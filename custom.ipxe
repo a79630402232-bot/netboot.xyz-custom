@@ -18,7 +18,7 @@ item option_seven ${space} KOS
 item option_eight ${space} tiny core 16
 item option_nine ${space} tiny core 15
 item option_ten ${space} tiny core 15
-
+item option_eleven ${space} tiny core 15
 
 choose custom_choice || goto custom_exit
 echo ${cls}
@@ -86,6 +86,15 @@ boot || goto custom_exit
 linux https://aitvin.ru/vmlinuz
 initrd https://aitvin.ru/initrd
 append boot=live components locales=en_US.UTF-8 fetch=https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
+
+
+:option_eleven
+linux https://aitvin.ru/vmlinuz
+initrd https://aitvin.ru/initrd
+append boot=live components locales=en_US.UTF-8 fetch=https://distro.ibiblio.org/puppylinux/puppy-0-1/puppy-1.0.0-firefox.iso
+
+
+
 
 :custom_exit
 chain utils.ipxe
