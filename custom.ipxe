@@ -17,6 +17,7 @@ item option_six ${space} Netlnx
 item option_seven ${space} KOS
 item option_eight ${space} tiny core 16
 item option_nine ${space} tiny core 15
+item option_ten ${space} tiny core 15
 
 
 choose custom_choice || goto custom_exit
@@ -81,6 +82,10 @@ kernel https://boot.netboot.xyz/memdisk raw iso
 initrd https://distro.ibiblio.org/tinycorelinux/15.x/x86/archive/15.0/TinyCore-15.0.iso
 boot || goto custom_exit
 
+:option_ten
+linux https://aitvin.ru/vmlinuz
+initrd https://aitvin.ru/initrd
+append boot=live components locales=en_US.UTF-8 fetch=https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
 
 :custom_exit
 chain utils.ipxe
