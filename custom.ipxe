@@ -19,7 +19,9 @@ item option_eight ${space} tiny core 16
 item option_nine ${space} tiny core 15
 item option_ten ${space} tiny core 15
 item option_eleven ${space} tiny core 16
-item option_twelve ${space} cdlinix
+item option_twelve ${space} Linux
+
+item option_n13 ${space} 13
 
 
 choose custom_choice || goto custom_exit
@@ -102,7 +104,11 @@ kernel https://boot.netboot.xyz/memdisk raw iso
 initrd https://distro.ibiblio.org/cdlinux/releases/0.9.7.1/CDlinux_mini-0.9.7.1.ISO
 boot || goto custom_exit
 
-
+:option_n13
+echo puppy
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd https://distro.ibiblio.org/puppylinux/puppy-0-1/puppy-1.0.0-firefox.iso
+boot || goto custom_exit
 
 
 :custom_exit
