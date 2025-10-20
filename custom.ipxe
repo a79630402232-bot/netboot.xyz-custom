@@ -16,6 +16,8 @@ item option_five ${space} New menu
 item option_six ${space} Netlnx
 item option_seven ${space} KOS
 item option_eight ${space} tiny core
+item option_nine ${space} tiny core
+
 
 choose custom_choice || goto custom_exit
 echo ${cls}
@@ -66,6 +68,13 @@ imgargs vmlinuz initrd=initrd.img boot=live components locales=en_US.UTF-8 netbo
 boot
 
 :option_eight
+echo grml-small
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
+boot || goto custom_exit
+
+
+:option_nine
 echo grml-small
 kernel https://boot.netboot.xyz/memdisk raw iso
 initrd https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
