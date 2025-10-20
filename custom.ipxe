@@ -101,7 +101,7 @@ append boot=live components locales=en_US.UTF-8 fetch=https://distro.ibiblio.org
 :option_twelve
 echo grml-small
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd https://distro.ibiblio.org/cdlinux/releases/0.9.7.1/CDlinux_mini-0.9.7.1.ISO
+initrd https://distro.ibiblio.org/cdlinux/releases/0.9.7.1/CDlinux_mini-0.9.7.1.iso
 boot || goto custom_exit
 
 :option_n13
