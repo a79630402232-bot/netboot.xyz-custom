@@ -15,8 +15,8 @@ item option_four ${space} Puppy1 Firefox local
 item option_five ${space} New menu
 item option_six ${space} Netlnx
 item option_seven ${space} KOS
-item option_eight ${space} tiny core
-item option_nine ${space} tiny core
+item option_eight ${space} tiny core 16
+item option_nine ${space} tiny core 15
 
 
 choose custom_choice || goto custom_exit
@@ -77,7 +77,7 @@ boot || goto custom_exit
 :option_nine
 echo grml-small
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd https://distro.ibiblio.org/tinycorelinux/16.x/x86/release/TinyCore-current.iso
+initrd https://distro.ibiblio.org/tinycorelinux/15.x/x86/archive/15.0/TinyCore-15.0.iso
 boot || goto custom_exit
 
 
